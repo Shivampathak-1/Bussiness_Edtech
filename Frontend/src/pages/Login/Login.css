@@ -1,0 +1,101 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: rgb(3, 26, 56); */
+    background: rgb(2,0,36);
+    background: linear-gradient(193deg, rgba(2,0,36,1) 20%, rgba(0,54,146,1) 90%, rgba(0,77,165,1) 100%);
+}
+#heading{
+    color: rgb(234, 158, 5);
+    margin-bottom: 1vw;
+    font-weight:bolder;
+    font-size:xx-large;
+}
+.box{
+    border: solid rgb(234, 158, 5) 2px;
+    height: 35vw;
+    width: 25vw;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.073);
+}
+#iconl{
+    height: 7vw;
+    margin: 1.5vw 0vw;
+}
+.align{
+    display: flex;
+    width: 100%;
+    /* align-items: start; */
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: .5vw;
+}
+.align input{
+    padding-left: 0.3vw;
+    margin-left: -0.2vw;
+}
+.userna{
+    font-size: 1.2vw;
+    margin-left: 5vw;
+}
+#username{
+    height: 2.5vw;
+    width: 20vw;
+    size: 1.5vw;
+    border-radius: 10px;
+    border-bottom: solid white 2px;
+    background: rgba(255, 255, 255, 0.049);
+}
+.passwor{
+    font-size: 1.2vw;
+    margin-left: 5vw;
+}
+#password{
+    height: 2.5vw;
+    width: 20vw;
+    border-bottom: solid white 2px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.049);
+}
+.remMe{
+    display: flex;
+    align-items: center;
+}
+.remember{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1.5vw;
+}
+#button{
+    padding: 0.2vw 8vw;
+    background-color: rgb(234, 158, 5);
+    border: solid yellow 1px;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 15px;
+}
+#bname{
+    color: rgb(234, 158, 5);
+    font-size: 3.2vw;
+    padding: 0%;
+    -webkit-box-reflect: below 0.5px -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(40%, transparent), to(rgba(234, 158, 5, 0.575)));
+}
+.fontsz{
+    font-size: 0.9vw;
+}
+.regis{
+    color: red;
+}
+.forgot{
+    color: rgb(2,208,254);
+}
