@@ -24,7 +24,6 @@ function Login() {
                     <input type="checkbox" name="check" id="checked"/>
                     <label className='fontsz' htmlFor="checked">Remember Me</label>
                 </div>
-                {/* div for Forgot Password */}
                 <div className="forgot">
                     <a href="/forgotpassword"><span>Forgot Password?</span></a>
                 </div>
