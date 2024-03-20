@@ -6,6 +6,7 @@ function Hero() {
     <div>
       <Navbar/>
       <h1>This is hero section</h1>
+      <a href="/login">Login</a>
     </div>
   )
 }

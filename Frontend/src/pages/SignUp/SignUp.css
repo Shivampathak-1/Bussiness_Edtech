@@ -1,0 +1,65 @@
+.cont{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(2,0,36);
+    background: linear-gradient(193deg, rgba(2,0,36,1) 20%, rgba(0,54,146,1) 90%, rgba(0,77,165,1) 100%);
+}
+.heading{
+    color: rgb(234, 158, 5);
+    margin-bottom: 0.25vw;
+    font-weight:bolder;
+    font-size:xx-large;
+    margin-top: -4vw;
+}
+.regbox{
+    border: solid rgb(234, 158, 5) 2px;
+    height: 40vw;
+    width: 25vw;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.073);
+}
+
+#iconr{
+    height: 6vw;
+    margin: 0.8vw 0vw;
+}
+
+.regalign{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: .5vw;
+    font-size: 1.1vw;
+    margin-left: 5vw;
+}
+input{
+    height: 2.5vw;
+    width: 20vw;
+    size: 1.5vw;
+    border-radius: 10px;
+    border-bottom: solid white 2px;
+    background: rgba(255, 255, 255, 0.049);
+}
+
+#regBtn{
+    padding: 0.2vw 4vw;
+    background-color: rgb(234, 158, 5);
+    border: solid yellow 1px;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-top: 0.5vw;
+}
+.already a{
+    color: red;
+}
