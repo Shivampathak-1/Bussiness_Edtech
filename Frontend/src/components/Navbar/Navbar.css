@@ -1,0 +1,16 @@
+.login{
+    background: rgb(255,199,0);
+background: linear-gradient(90deg, rgba(255,199,0,1) 0%, rgba(194,86,7,1) 100%);
+    
+}
+
+.login:hover{
+    background-color: rgb(80, 77, 77);
+    color: white;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+    transform: scale(1.15);
+}
+.b-name{
+    justify-content: flex-start;
+}

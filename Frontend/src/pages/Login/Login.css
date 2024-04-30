@@ -5,8 +5,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgb(2,0,36);
-    background: linear-gradient(193deg, rgba(2,0,36,1) 20%, rgba(0,54,146,1) 90%, rgba(0,77,165,1) 100%);
+    margin-top: -2vw;;
 }
 #heading{
     color: rgb(234, 158, 5);

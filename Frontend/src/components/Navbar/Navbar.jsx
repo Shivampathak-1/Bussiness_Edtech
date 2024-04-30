@@ -1,11 +1,134 @@
-import React from 'react'
+import {React, Fragment} from 'react'
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import logo from '../../assets/images/logo.png'
+import user from '../../assets/icons/user.png'
+import {Link} from 'react-router-dom'
+import {BellIcon} from '@heroicons/react/outline'
+import './Navbar.css'
+
+
+
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
 
 function Navbar() {
+
+  const loggedIn = window.localStorage.getItem("IsloggedIn");
   return (
-    <div>
-      <h1>This is navbar</h1>
-    </div>
-  )
+    <Disclosure as="nav" style={{background:"rgba(217,217,217,0.05)",borderBottom:"solid white 0.5px"}}>
+      {({ open }) => (
+        <>
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="flex items-center flex-shrink-0">
+                {/* Logo */}
+                <img
+                  className="h-8 w-auto rounded"
+                  src={logo}
+                  alt="Your Company"
+                />
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                {loggedIn ? null : (
+                  <div className="login rounded-2xl mr-3 px-6 py-1 transition duration-300 ease-in-out transform">
+                    <Link to="/login">Login</Link>
+                  </div>
+               )} 
+
+                {/* Bell Icon */}
+                <button
+                  type="button"
+                  className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
+                  <span className="absolute -inset-1.5" />
+                  <span className="sr-only">View notifications</span>
+                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+
+                {/* Profile dropdown */}
+                <Menu as="div" className="relative ml-3">
+                  <div>
+                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                      <span className="absolute -inset-1.5" />
+                      <span className="sr-only">Open user menu</span>
+                      {/* {loggedIn ? (
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          src={data ? data.profile_image : user}
+                          alt=""
+                        />
+                      ) : ( */}
+                        <img className="h-8 w-8 rounded-full" src={user} alt="" />
+                      {/* )} */}
+                    </Menu.Button>
+                  </div>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/profile"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            My Profile
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/settings"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Settings
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/"
+                            onClick={(e) => {
+                              window.localStorage.removeItem("IsloggedIn");
+                              window.localStorage.removeItem("token");
+                              window.location.reload();
+                            }}
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Sign out
+                          </Link>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </Disclosure>
+  );
 }
 
 export default Navbar
